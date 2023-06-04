@@ -137,49 +137,6 @@ class HomeScreen extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
               ),
             ),
-            SizedBox(
-              height: 8,
-            ),
-            Text(
-              'Applied jobs',
-              style: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-                fontSize: 16,
-              ),
-            ),
-            SizedBox(
-              height: 8,
-            ),
-            Expanded(
-              child: ListView.builder(
-                itemCount: jobs.length,
-                itemBuilder: (context, index) => Card(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(16.0),
-                  ),
-                  color: Colors.white.withOpacity(0.15),
-                  child: ListTile(
-                    leading: ClipRRect(
-                      borderRadius: BorderRadius.circular(24),
-                      child: Image.network(
-                        jobs[index]['logoUrl'] ?? '',
-                        width: 48,
-                        height: 48,
-                      ),
-                    ),
-                    title: Text(
-                      jobs[index]['title'] ?? '',
-                      style: Get.textTheme.bodyText1?.copyWith(fontSize: 16),
-                    ),
-                    subtitle: Text(
-                      jobs[index]['company'] ?? '',
-                      style: Get.textTheme.subtitle1?.copyWith(fontSize: 12),
-                    ),
-                  ),
-                ),
-              ),
-            )
           ],
         ),
       ),

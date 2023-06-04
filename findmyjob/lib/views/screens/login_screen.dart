@@ -26,12 +26,14 @@ class LoginScreen extends StatelessWidget {
               child: Container(
                 padding: EdgeInsets.all(16.0),
                 width: double.infinity,
-                color: kPrimaryColor,
+                color: Color.fromRGBO(114, 230, 255, 100).withOpacity(1),
                 child: SafeArea(
-                    child: Text(
-                  'Welcome Back',
-                  style: Get.textTheme.headline4,
-                )),
+                  child: Center(
+                      child: Text(
+                    'Welcome Back',
+                    style: Get.textTheme.headline4,
+                  )),
+                ),
               ),
             ),
           ),
@@ -39,7 +41,7 @@ class LoginScreen extends StatelessWidget {
             flex: 3,
             child: SingleChildScrollView(
               child: Container(
-                padding: EdgeInsets.all(16),
+                padding: EdgeInsets.all(10),
                 color: Colors.white,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,

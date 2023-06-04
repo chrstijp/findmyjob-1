@@ -1,6 +1,9 @@
+import 'package:findmyjob/views/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:findmyjob/views/widgets/jtext_form_field.dart';
+
+import 'base_nav_screen.dart';
 
 class MyProfileScreen extends StatefulWidget {
   static const route = '/my-profile';
@@ -17,261 +20,327 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
       appBar: AppBar(
-        title: Text('My Profile'),
+        title: Text(
+          'Create Your Profile',
+          style: TextStyle(
+            color: Color.fromARGB(173, 32, 32, 32),
+          ),
+        ),
         centerTitle: true,
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+              bottomRight: Radius.circular(25),
+              bottomLeft: Radius.circular(25)),
+        ),
+        elevation: 0.00,
+        backgroundColor: const Color.fromARGB(255, 246, 246, 246),
       ),
-      body: SingleChildScrollView(
+      body: Container(
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height,
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.center,
+            end: Alignment.bottomCenter,
+            colors: [
+              const Color.fromRGBO(114, 230, 255, 100).withOpacity(1),
+              const Color.fromRGBO(6, 210, 255, 100).withOpacity(1),
+            ],
+          ),
+        ),
         child: Container(
-          width: double.infinity,
-          padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              CircleAvatar(
-                radius: 48,
-                backgroundImage: NetworkImage(
-                  'https://media-exp1.licdn.com/dms/image/C5603AQHUTZXoeUKvBw/profile-displayphoto-shrink_400_400/0/1592802085398?e=1629331200&v=beta&t=jeIU12SbaYFWu2GDs-P2pJi6fLWRPDQToJpTggPJ7ko',
-                ),
-              ),
-              Form(
-                key: _formKey,
-                child: Column(
-                  children: [
-                    JTextFormField(
-                      labelText: 'First Name',
-                    ),
-                    JTextFormField(
-                      labelText: 'Last Name',
-                    ),
-                    JTextFormField(
-                      labelText: 'Email',
-                    ),
-                    JTextFormField(
-                      labelText: 'Phone number',
-                    ),
-                    JTextFormField(
-                      labelText: 'Date of birth',
-                    ),
-                    JTextFormField(
-                      labelText: 'Gender',
-                    ),
-                    JTextFormField(
-                      labelText: 'Address',
-                    ),
-                    JTextFormField(
-                      labelText: 'Nationality',
-                    ),
-                  ],
-                ),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          child: SingleChildScrollView(
+            child: Container(
+              width: double.infinity,
+              padding: EdgeInsets.symmetric(horizontal: 16, vertical: 120),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Text(
-                    'Experience',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16,
-                    ),
+                  Image.asset(
+                    'assets/images/FindMyPage.png',
+                    height: 100,
+                    width: 200,
                   ),
-                  TextButton(
-                    onPressed: () {},
-                    child: Text('Edit'),
+                  SizedBox(
+                    height: 5,
                   ),
-                ],
-              ),
-              ...List.generate(
-                4,
-                (index) => Container(
-                  width: double.infinity,
-                  child: Card(
-                    margin: EdgeInsets.symmetric(vertical: 4),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8.0),
-                    ),
-                    color: Colors.white.withOpacity(0.15),
-                    child: Container(
-                      padding: EdgeInsets.all(16),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Senior Mobile Apps Developer',
-                            style:
-                                Get.textTheme.bodyText1?.copyWith(fontSize: 16),
-                          ),
-                          Text(
-                            'Ongo Mobile Money',
-                            style:
-                                Get.textTheme.subtitle1?.copyWith(fontSize: 12),
-                          ),
-                          Text(
-                            'Jul 2016 - Present',
-                            style:
-                                Get.textTheme.subtitle1?.copyWith(fontSize: 12),
-                          ),
-                          Text(
-                            '5 Years',
-                            style:
-                                Get.textTheme.subtitle1?.copyWith(fontSize: 12),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Education',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16,
-                    ),
-                  ),
-                  TextButton(
-                    onPressed: () {},
-                    child: Text('Edit'),
-                  ),
-                ],
-              ),
-              ...List.generate(
-                2,
-                (index) => Container(
-                  width: double.infinity,
-                  child: Card(
-                    margin: EdgeInsets.symmetric(vertical: 4),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8.0),
-                    ),
-                    color: Colors.white.withOpacity(0.15),
-                    child: Container(
-                      padding: EdgeInsets.all(16),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Thanlyin Technological University',
-                            style:
-                                Get.textTheme.bodyText1?.copyWith(fontSize: 16),
-                          ),
-                          Text(
-                            'Bachelor\'s Degree in Engineering (Electrical/Electronic)',
-                            style:
-                                Get.textTheme.subtitle1?.copyWith(fontSize: 12),
-                          ),
-                          Text(
-                            'Myanmar',
-                            style:
-                                Get.textTheme.subtitle1?.copyWith(fontSize: 12),
-                          ),
-                          Text(
-                            '2012',
-                            style:
-                                Get.textTheme.subtitle1?.copyWith(fontSize: 12),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Skills',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16,
-                    ),
-                  ),
-                  TextButton(
-                    onPressed: () {},
-                    child: Text('Edit'),
-                  ),
-                ],
-              ),
-              SizedBox(
-                width: double.infinity,
-                height: 80,
-                child: ListView.builder(
-                  itemCount: 5,
-                  itemBuilder: (context, index) => Card(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8.0),
-                    ),
-                    color: Colors.white.withOpacity(0.15),
-                    child: Container(
-                      padding: EdgeInsets.all(8),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text('Android'),
-                          Text(
-                            'Advanced',
-                            style:
-                                Get.textTheme.subtitle1?.copyWith(fontSize: 12),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  scrollDirection: Axis.horizontal,
-                ),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Uploaded resume',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16,
-                    ),
-                  ),
-                  TextButton(
-                    onPressed: () {},
-                    child: Text('Browse'),
-                  ),
-                ],
-              ),
-              SizedBox(
-                width: double.infinity,
-                child: Card(
-                  margin: EdgeInsets.symmetric(vertical: 4),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                  color: Colors.white.withOpacity(0.15),
-                  child: Container(
-                    padding: EdgeInsets.all(16),
+                  Form(
+                    key: _formKey,
                     child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          'MinThuraCV_v2.pdf',
-                          style:
-                              Get.textTheme.bodyText1?.copyWith(fontSize: 16),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 12),
+                          child: TextFormField(
+                            decoration: const InputDecoration(
+                              focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    color: Color.fromARGB(255, 255, 255, 255),
+                                    width: 3.0),
+                              ),
+                              focusedErrorBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    color: Color.fromARGB(255, 255, 2, 2),
+                                    width: 3.0),
+                              ),
+                              enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    color: Color.fromARGB(255, 255, 255, 255),
+                                    width: 3.0),
+                              ),
+                              border: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    color: Color.fromARGB(255, 248, 37, 37),
+                                    width: 3.0),
+                              ),
+                              labelText: 'First Name',
+                            ),
+                            validator: (value) {
+                              if (value == null || value.isEmpty) {
+                                return 'Please Enter Your First Name';
+                              }
+                              return null;
+                            },
+                          ),
                         ),
-                        Text(
-                          '12 Jun 2021 1:06PM',
-                          style:
-                              Get.textTheme.subtitle1?.copyWith(fontSize: 12),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 12),
+                          child: TextFormField(
+                            decoration: const InputDecoration(
+                              focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    color: Color.fromARGB(255, 255, 255, 255),
+                                    width: 3.0),
+                              ),
+                              focusedErrorBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    color: Color.fromARGB(255, 255, 2, 2),
+                                    width: 3.0),
+                              ),
+                              enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    color: Color.fromARGB(255, 255, 255, 255),
+                                    width: 3.0),
+                              ),
+                              border: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    color: Color.fromARGB(255, 248, 37, 37),
+                                    width: 3.0),
+                              ),
+                              labelText: 'Last Name',
+                            ),
+                            validator: (value) {
+                              if (value == null || value.isEmpty) {
+                                return 'Please Enter Your Last Name ';
+                              }
+                              return null;
+                            },
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 12),
+                          child: TextFormField(
+                            decoration: const InputDecoration(
+                              focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    color: Color.fromARGB(255, 255, 255, 255),
+                                    width: 3.0),
+                              ),
+                              focusedErrorBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    color: Color.fromARGB(255, 255, 2, 2),
+                                    width: 3.0),
+                              ),
+                              enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    color: Color.fromARGB(255, 255, 255, 255),
+                                    width: 3.0),
+                              ),
+                              border: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    color: Color.fromARGB(255, 248, 37, 37),
+                                    width: 3.0),
+                              ),
+                              labelText: 'Email',
+                            ),
+                            validator: (value) {
+                              if (value == null || value.isEmpty) {
+                                return 'Please Enter Your Email';
+                              }
+                              return null;
+                            },
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 12),
+                          child: TextFormField(
+                            decoration: const InputDecoration(
+                              focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    color: Color.fromARGB(255, 255, 255, 255),
+                                    width: 3.0),
+                              ),
+                              focusedErrorBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    color: Color.fromARGB(255, 255, 2, 2),
+                                    width: 3.0),
+                              ),
+                              enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    color: Color.fromARGB(255, 255, 255, 255),
+                                    width: 3.0),
+                              ),
+                              border: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    color: Color.fromARGB(255, 248, 37, 37),
+                                    width: 3.0),
+                              ),
+                              labelText: 'Phone Number',
+                            ),
+                            validator: (value) {
+                              if (value == null || value.isEmpty) {
+                                return 'Please Enter Your Phone Number';
+                              }
+                              return null;
+                            },
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 12),
+                          child: TextFormField(
+                            decoration: const InputDecoration(
+                              focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    color: Color.fromARGB(255, 255, 255, 255),
+                                    width: 3.0),
+                              ),
+                              focusedErrorBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    color: Color.fromARGB(255, 255, 2, 2),
+                                    width: 3.0),
+                              ),
+                              enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    color: Color.fromARGB(255, 255, 255, 255),
+                                    width: 3.0),
+                              ),
+                              border: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    color: Color.fromARGB(255, 248, 37, 37),
+                                    width: 3.0),
+                              ),
+                              labelText: 'Date Of birth',
+                            ),
+                            validator: (value) {
+                              if (value == null || value.isEmpty) {
+                                return 'Please Enter Your DOB ';
+                              }
+                              return null;
+                            },
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 12),
+                          child: TextFormField(
+                            decoration: const InputDecoration(
+                              focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    color: Color.fromARGB(255, 255, 255, 255),
+                                    width: 3.0),
+                              ),
+                              focusedErrorBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    color: Color.fromARGB(255, 255, 2, 2),
+                                    width: 3.0),
+                              ),
+                              enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    color: Color.fromARGB(255, 255, 255, 255),
+                                    width: 3.0),
+                              ),
+                              border: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    color: Color.fromARGB(255, 248, 37, 37),
+                                    width: 3.0),
+                              ),
+                              labelText: 'Gender',
+                            ),
+                            validator: (value) {
+                              if (value == null || value.isEmpty) {
+                                return 'Please Enter Your Gender';
+                              }
+                              return null;
+                            },
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 12),
+                          child: TextFormField(
+                            decoration: const InputDecoration(
+                              focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    color: Color.fromARGB(255, 255, 255, 255),
+                                    width: 3.0),
+                              ),
+                              focusedErrorBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    color: Color.fromARGB(255, 255, 2, 2),
+                                    width: 3.0),
+                              ),
+                              enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    color: Color.fromARGB(255, 255, 255, 255),
+                                    width: 3.0),
+                              ),
+                              border: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    color: Color.fromARGB(255, 248, 37, 37),
+                                    width: 3.0),
+                              ),
+                              labelText: 'Address',
+                            ),
+                            validator: (value) {
+                              if (value == null || value.isEmpty) {
+                                return 'Please Enter Your Address';
+                              }
+                              return null;
+                            },
+                          ),
+                        ),
+                        ElevatedButton(
+                          style: ButtonStyle(
+                              minimumSize:
+                                  MaterialStatePropertyAll(Size(100, 50)),
+                              shape: MaterialStatePropertyAll(
+                                  RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10))),
+                              backgroundColor: MaterialStatePropertyAll(
+                                  Color.fromARGB(204, 62, 128, 142)
+                                      .withOpacity(1))),
+                          onPressed: () {
+                            // Validate returns true if the form is valid, or false otherwise.
+                            if (_formKey.currentState!.validate()) {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => BaseNavScreen()));
+                              // If the form is valid, display a snackbar. In the real world,
+                              // you'd often call a server or save the information in a database.
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                const SnackBar(
+                                    content: Text('Processing Data')),
+                              );
+                            }
+                          },
+                          child: const Text('Submit'),
                         ),
                       ],
                     ),
                   ),
-                ),
+                ],
               ),
-            ],
+            ),
           ),
         ),
       ),

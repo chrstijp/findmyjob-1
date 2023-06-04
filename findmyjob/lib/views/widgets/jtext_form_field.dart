@@ -5,7 +5,7 @@ class JTextFormField extends StatelessWidget {
   final String labelText;
   const JTextFormField({
     Key? key,
-    required this.labelText,
+    required this.labelText, required String? Function(dynamic value) validator,
   }) : super(key: key);
 
   @override
