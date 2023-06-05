@@ -1,4 +1,6 @@
 import 'package:findmyjob/views/screens/home_screen.dart';
+import 'package:findmyjob/views/screens/map_search.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:findmyjob/views/widgets/jtext_form_field.dart';
@@ -95,6 +97,7 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                                     width: 3.0),
                               ),
                               labelText: 'First Name',
+                              prefixIcon: Icon(Icons.person_2_outlined),
                             ),
                             validator: (value) {
                               if (value == null || value.isEmpty) {
@@ -129,6 +132,7 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                                     width: 3.0),
                               ),
                               labelText: 'Last Name',
+                              prefixIcon: Icon(Icons.person_2_outlined),
                             ),
                             validator: (value) {
                               if (value == null || value.isEmpty) {
@@ -163,13 +167,9 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                                     width: 3.0),
                               ),
                               labelText: 'Email',
+                              prefixIcon: Icon(Icons.email),
                             ),
-                            validator: (value) {
-                              if (value == null || value.isEmpty) {
-                                return 'Please Enter Your Email';
-                              }
-                              return null;
-                            },
+                            keyboardType: TextInputType.emailAddress,
                           ),
                         ),
                         Padding(
@@ -197,6 +197,7 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                                     width: 3.0),
                               ),
                               labelText: 'Phone Number',
+                              prefixIcon: Icon(Icons.phone_android),
                             ),
                             validator: (value) {
                               if (value == null || value.isEmpty) {
@@ -204,6 +205,7 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                               }
                               return null;
                             },
+                            keyboardType: TextInputType.number,
                           ),
                         ),
                         Padding(
@@ -231,6 +233,7 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                                     width: 3.0),
                               ),
                               labelText: 'Date Of birth',
+                              prefixIcon: Icon(Icons.date_range),
                             ),
                             validator: (value) {
                               if (value == null || value.isEmpty) {
@@ -238,6 +241,7 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                               }
                               return null;
                             },
+                            keyboardType: TextInputType.datetime,
                           ),
                         ),
                         Padding(
@@ -265,6 +269,7 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                                     width: 3.0),
                               ),
                               labelText: 'Gender',
+                              prefixIcon: Icon(Icons.person_pin),
                             ),
                             validator: (value) {
                               if (value == null || value.isEmpty) {
@@ -299,6 +304,7 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                                     width: 3.0),
                               ),
                               labelText: 'Address',
+                              prefixIcon: Icon(Icons.location_city),
                             ),
                             validator: (value) {
                               if (value == null || value.isEmpty) {
@@ -324,7 +330,8 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => BaseNavScreen()));
+                                      builder: (context) =>
+                                          BaseNavScreen()));
                               // If the form is valid, display a snackbar. In the real world,
                               // you'd often call a server or save the information in a database.
                               ScaffoldMessenger.of(context).showSnackBar(

@@ -1,3 +1,4 @@
+import 'package:findmyjob/views/screens/map_search.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
@@ -50,9 +51,9 @@ class LoginScreen extends StatelessWidget {
                       child: Column(
                         children: [
                           JTextFormField2(
-                            labelText: 'Email',
-                            prefixIcon: CupertinoIcons.mail,
-                            textInputType: TextInputType.emailAddress,
+                            labelText: 'Phone Number',
+                            prefixIcon: CupertinoIcons.device_phone_portrait,
+                            textInputType: TextInputType.number,
                           ),
                           JTextFormField2(
                             labelText: 'Password',
@@ -78,7 +79,7 @@ class LoginScreen extends StatelessWidget {
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) =>
-                                            MyProfileScreen()));
+                                            DependentDropdownExample()));
                               },
                               child: Text('Login'),
                             ),

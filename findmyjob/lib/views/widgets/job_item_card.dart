@@ -6,14 +6,14 @@ import 'package:findmyjob/views/screens/job_details_screen.dart';
 import 'findmyjob_button.dart';
 
 class JobItemCard extends StatelessWidget {
-  final String company;
+  final String jobs;
   final String jobTitle;
-  final String companyLogoUrl;
+  final String jobsLogoUrl;
   const JobItemCard({
     Key? key,
-    required this.company,
+    required this.jobs,
     required this.jobTitle,
-    required this.companyLogoUrl,
+    required this.jobsLogoUrl,
   }) : super(key: key);
 
   @override
@@ -33,7 +33,7 @@ class JobItemCard extends StatelessWidget {
               height: 8,
             ),
             Image.network(
-              companyLogoUrl,
+              jobsLogoUrl,
               width: 64,
               height: 64,
             ),
@@ -41,7 +41,7 @@ class JobItemCard extends StatelessWidget {
               height: 8,
             ),
             Text(
-              company,
+              jobs,
               style: TextStyle(
                 color: Colors.grey,
                 fontSize: 12,

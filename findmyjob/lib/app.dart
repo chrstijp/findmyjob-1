@@ -16,6 +16,7 @@ class findmyjobApp extends StatelessWidget {
         routes: routes,
         debugShowCheckedModeBanner: false,
         home: SignUpScreen() //BaseNavScreen(),
+        // home: BaseNavScreen() //BaseNavScreen(),
         // initialRoute: MyProfileScreen.route,
         );
   }

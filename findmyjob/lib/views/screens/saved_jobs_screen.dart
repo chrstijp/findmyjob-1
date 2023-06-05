@@ -38,18 +38,19 @@ class SavedJobsScreen extends StatelessWidget {
                 child: ListTile(
                   leading: ClipRRect(
                     borderRadius: BorderRadius.circular(24),
-                    child: Image.network(
-                      'https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/768px-Google_%22G%22_Logo.svg.png',
-                      width: 48,
-                      height: 48,
-                    ),
+                    // child: Image.network(
+                    //   'https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/768px-Google_%22G%22_Logo.svg.png',
+                    //   width: 48,
+                    //   height: 48,
+                    // ),
+                    child: CircleAvatar(),
                   ),
                   title: Text(
-                    'Developer',
+                    'Salesman',
                     style: Get.textTheme.bodyText1?.copyWith(fontSize: 16),
                   ),
                   subtitle: Text(
-                    'Google',
+                    'Anand stores',
                     style: Get.textTheme.subtitle1?.copyWith(fontSize: 12),
                   ),
                 ),

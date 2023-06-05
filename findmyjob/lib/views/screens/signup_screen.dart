@@ -23,12 +23,20 @@ class SignUpScreen extends StatelessWidget {
               child: Container(
                 padding: EdgeInsets.all(16.0),
                 width: double.infinity,
-                color: kPrimaryColor,
+                color: Color.fromRGBO(114, 230, 255, 100).withOpacity(1),
                 child: SafeArea(
+                  child: Center(
                     child: Text(
-                  'Create Account',
-                  style: Get.textTheme.headline4,
-                )),
+                      'Create Account',
+                      style: Get.textTheme.headline4?.copyWith(
+                        fontSize: 44.0,
+                        color: Color.fromARGB(255, 122, 111, 111),
+                        fontFamily: 'Roboto',
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ),
               ),
             ),
           ),
@@ -45,9 +53,9 @@ class SignUpScreen extends StatelessWidget {
                       child: Column(
                         children: [
                           JTextFormField2(
-                            labelText: 'Email',
-                            prefixIcon: CupertinoIcons.mail,
-                            textInputType: TextInputType.emailAddress,
+                            labelText: 'Phone Number',
+                            prefixIcon: CupertinoIcons.device_phone_portrait,
+                            textInputType: TextInputType.number,
                           ),
                           JTextFormField2(
                             labelText: 'Password',

@@ -7,42 +7,43 @@ class HomeScreen extends StatelessWidget {
   static const route = '/';
   static final jobs = [
     {
-      'company': 'Microsoft',
-      'title': 'Product Manager',
+      'jobs': 'Cleaning',
+      'title': 'Room Cleaning',
       'logoUrl':
-          'https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/480px-Microsoft_logo.svg.png',
+          'https://png.pngtree.com/png-vector/20190125/ourmid/pngtree-character-design-of-home-cleaning-service-png-image_531253.jpg',
     },
-    {
-      'company': 'Google',
-      'title': 'UI/UX Designer',
-      'logoUrl':
-          'https://www.freepnglogos.com/uploads/google-logo-png/google-logo-icon-png-transparent-background-osteopathy-16.png',
-    },
-    {
-      'company': 'Apple',
-      'title': 'Backend Developer',
-      'logoUrl':
-          'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Apple_logo_grey.svg/1724px-Apple_logo_grey.svg.png',
-    },
-    {
-      'company': 'Microsoft',
-      'title': 'Product Manager',
-      'logoUrl':
-          'https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/480px-Microsoft_logo.svg.png',
-    },
-    {
-      'company': 'Microsoft',
-      'title': 'Product Manager',
-      'logoUrl':
-          'https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/480px-Microsoft_logo.svg.png',
-    }
+    // {
+    //   'jobs': 'Google',
+    //   'title': ' ',
+    //   'logoUrl':
+    //       'https://www.freepnglogos.com/uploads/google-logo-png/google-logo-icon-png-transparent-background-osteopathy-16.png',
+    // },
+    // {
+    //   'jobs': 'Apple',
+    //   'title': 'Backend Developer',
+    //   'logoUrl':
+    //       'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Apple_logo_grey.svg/1724px-Apple_logo_grey.svg.png',
+    // },
+    // {
+    //   'jobs': 'Microsoft',
+    //   'title': 'Product Manager',
+    //   'logoUrl':
+    //       'https://png.pngtree.com/element_our/20200610/ourmid/pngtree-professional-cleaners-image_2245036.jpg',
+    // },
+    // {
+    //   'jobs': 'Microsoft',
+    //   'title': 'Product Manager',
+    //   'logoUrl':
+    //       'https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/480px-Microsoft_logo.svg.png',
+    // }
   ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // backgroundColor: Color.fromARGB(189, 1, 55, 99),
       appBar: AppBar(
         centerTitle: true,
-        title: Text('findmyjob'),
+        title: Text('Find My Job'),
         actions: [
           TextButton(
             onPressed: () {
@@ -50,8 +51,8 @@ class HomeScreen extends StatelessWidget {
             },
             child: CircleAvatar(
               radius: 20,
-              backgroundImage: NetworkImage(
-                  'https://media-exp1.licdn.com/dms/image/C5603AQHUTZXoeUKvBw/profile-displayphoto-shrink_400_400/0/1592802085398?e=1629331200&v=beta&t=jeIU12SbaYFWu2GDs-P2pJi6fLWRPDQToJpTggPJ7ko'),
+              backgroundImage:
+                  NetworkImage('https://www.pngegg.com/en/png-zhjvg'),
             ),
           ),
         ],
@@ -130,9 +131,9 @@ class HomeScreen extends StatelessWidget {
               child: ListView.builder(
                 itemCount: jobs.length,
                 itemBuilder: (context, index) => JobItemCard(
-                  company: jobs[index]['company'] ?? '',
+                  jobs: jobs[index]['jobs'] ?? '',
                   jobTitle: jobs[index]['title'] ?? '',
-                  companyLogoUrl: jobs[index]['logoUrl'] ?? '',
+                  jobsLogoUrl: jobs[index]['logoUrl'] ?? '',
                 ),
                 scrollDirection: Axis.horizontal,
               ),
