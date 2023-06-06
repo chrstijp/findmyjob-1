@@ -63,7 +63,7 @@ class _DependentDropdownExampleState extends State<DependentDropdownExample> {
                   ),
                   Container(
                     height: 400,
-                    width: 300,
+                    width: 400,
                     // decoration: BoxDecoration(
                     //   border:
                     //       Border.all(color: Color.fromARGB(255, 251, 252, 252)),
@@ -74,7 +74,7 @@ class _DependentDropdownExampleState extends State<DependentDropdownExample> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Container(
-                          width: 250,
+                          width: 300,
                           height: 50,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
@@ -109,7 +109,7 @@ class _DependentDropdownExampleState extends State<DependentDropdownExample> {
                         ),
                         const SizedBox(height: 20),
                         Container(
-                            width: 250,
+                            width: 300,
                             height: 50,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
