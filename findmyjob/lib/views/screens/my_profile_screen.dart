@@ -75,6 +75,7 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                         Padding(
                           padding: const EdgeInsets.symmetric(vertical: 12),
                           child: TextFormField(
+                            style: TextStyle(color: Colors.black),
                             decoration: const InputDecoration(
                               focusedBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
@@ -110,6 +111,7 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                         Padding(
                           padding: const EdgeInsets.symmetric(vertical: 12),
                           child: TextFormField(
+                            style: TextStyle(color: Colors.black),
                             decoration: const InputDecoration(
                               focusedBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
@@ -145,6 +147,7 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                         Padding(
                           padding: const EdgeInsets.symmetric(vertical: 12),
                           child: TextFormField(
+                            style: TextStyle(color: Colors.black),
                             decoration: const InputDecoration(
                               focusedBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
@@ -175,6 +178,7 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                         Padding(
                           padding: const EdgeInsets.symmetric(vertical: 12),
                           child: TextFormField(
+                            style: TextStyle(color: Colors.black),
                             decoration: const InputDecoration(
                               focusedBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
@@ -211,6 +215,7 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                         Padding(
                           padding: const EdgeInsets.symmetric(vertical: 12),
                           child: TextFormField(
+                            style: TextStyle(color: Colors.black),
                             decoration: const InputDecoration(
                               focusedBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
@@ -247,6 +252,7 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                         Padding(
                           padding: const EdgeInsets.symmetric(vertical: 12),
                           child: TextFormField(
+                            style: TextStyle(color: Colors.black),
                             decoration: const InputDecoration(
                               focusedBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
@@ -282,6 +288,7 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                         Padding(
                           padding: const EdgeInsets.symmetric(vertical: 12),
                           child: TextFormField(
+                            style: TextStyle(color: Colors.black),
                             decoration: const InputDecoration(
                               focusedBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
@@ -330,8 +337,7 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) =>
-                                          BaseNavScreen()));
+                                      builder: (context) => BaseNavScreen()));
                               // If the form is valid, display a snackbar. In the real world,
                               // you'd often call a server or save the information in a database.
                               ScaffoldMessenger.of(context).showSnackBar(
