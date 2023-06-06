@@ -1,3 +1,4 @@
+import 'package:findmyjob/views/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:findmyjob/routes.dart';
@@ -15,7 +16,7 @@ class findmyjobApp extends StatelessWidget {
         theme: theme(),
         routes: routes,
         debugShowCheckedModeBanner: false,
-        home: SignUpScreen() //BaseNavScreen(),
+        home: SplashScreen() //BaseNavScreen(),
         // home: BaseNavScreen() //BaseNavScreen(),
         // initialRoute: MyProfileScreen.route,
         );
